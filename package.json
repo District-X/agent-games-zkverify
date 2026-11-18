@@ -1,0 +1,15 @@
+{
+  "name": "agentgames-proof-gatekeeper",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Proof Gatekeeper agent for zkVerify Agent Games Season 01",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "selftest": "node test/selftest.js",
+    "prooftest": "node test/prooftest.js",
+    "download-circuits": "node scripts/download-circuits.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": { "snarkjs": "0.7.6" }
+}
