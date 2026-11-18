@@ -1,0 +1,17 @@
+[PASS] GET /health :: {"ok":true,"service":"proof-gatekeeper","protocolVersion":"v1","hmacConfigured":true,"seenProofs":0}
+[PASS] preflight -> {ok:true, protocolVersion:"v1"}
+[PASS] preflight response signature valid
+[PASS] valid task -> APPROVE/VALID_CONDITION :: {"d":"APPROVE","r":"VALID_CONDITION"}
+[PASS] valid task response signature valid
+[PASS] valid task carries proof + public_signals
+[PASS] valid task proof verifies against official VK
+[PASS] trap VK_SUBSTITUTION -> REJECT + verifying proof :: decision=REJECT reason=VK_SUBSTITUTION proofVerifies=true
+[PASS] trap THRESHOLD_MISMATCH -> REJECT + verifying proof :: decision=REJECT reason=THRESHOLD_MISMATCH proofVerifies=true
+[PASS] trap EXPIRED_CONDITION -> REJECT + verifying proof :: decision=REJECT reason=EXPIRED_CONDITION proofVerifies=true
+[PASS] trap RECIPIENT_MISMATCH -> REJECT + verifying proof :: decision=REJECT reason=RECIPIENT_MISMATCH proofVerifies=true
+[PASS] trap AMOUNT_OVERFLOW -> REJECT + verifying proof :: decision=REJECT reason=AMOUNT_OVERFLOW proofVerifies=true
+[PASS] PROOF_REUSED -> REJECT, no proof attached :: {"d":"REJECT","r":"PROOF_REUSED"}
+[PASS] bad signature -> 401 :: status=401
+[PASS] missing signature -> 401 :: status=401
+
+SELFTEST SUMMARY: 15 passed, 0 failed
